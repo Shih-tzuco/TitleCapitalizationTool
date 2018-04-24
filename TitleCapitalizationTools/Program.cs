@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
-namespace TitCapTool
+
+namespace TitleCapitalizationTool
 {
-    class MainClass
+   public class MainClass
     {
         public static void Main()
         {
             do
             {
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine("Please, Enter a String in English:");
+                Console.Write("Please, Enter a String in English: ");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 string text = Console.ReadLine();
                 text = text.Trim();
-                string[] preposition = new string[] { "A", "An", "The", "But", "For", "Nor", "So", "Yet", "At", "By", "In", "On", "Or", "Out", "To", "Up" };
+                string[] preposition = new string[] { "A", "An", "At", "By", "But", "For", "In", "Nor", "On", "Or", "Out", "So", "The", "To", "Up", "Yet" };
                 while (text.Contains("  "))
                 {
                     text = text.Replace("  ", " ");
@@ -26,7 +27,9 @@ namespace TitCapTool
                     foreach (string newSplit in preposition)
                     {
                         if (split[i].Equals(newSplit))
+                        {
                             split[i] = split[i].ToLower();
+                        }
                     }
                 }
                 titleCase = string.Join(" ", split);
@@ -61,12 +64,12 @@ namespace TitCapTool
                     }
                 }
                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine("Output String: \t");
+                Console.Write("Output String: ");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine(builder);
-                Console.WriteLine("\n");
+                Console.Write("\n");
             }
             while (true);
         }
     }
-}
+} 
