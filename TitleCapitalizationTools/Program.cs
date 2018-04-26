@@ -14,8 +14,8 @@ namespace TitleCapitalizationTool
                 Console.Write("Please, Enter a String in English: ");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 string text = Console.ReadLine();
-
                 text = text.Trim();
+                text = CultureInfo.CurrentCulture.TextInfo.ToLower(text);
                 string[] preposition = new string[] { "A", "An", "At", "But", "By", "For", "In", "Nor", "On", "Or", "Out", "So", "The", "To", "Up", "Yet" };
                 while (text.Contains("  "))
                 {
