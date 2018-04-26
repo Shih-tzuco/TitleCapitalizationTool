@@ -14,24 +14,27 @@ namespace TitleCapitalizationTool
                 Console.Write("Please, Enter a String in English: ");
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 string text = Console.ReadLine();
-                text = text.Trim();
-                string[] preposition = new string[] { "A", "An", "At", "By", "But", "For", "In", "Nor", "On", "Or", "Out", "So", "The", "To", "Up", "Yet" };
-                while (text.Contains("  "))
+
+                if (text.Length != 0)
                 {
-                    text = text.Replace("  ", " ");
-                }
-                string titleCase = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text);
-                string[] split = titleCase.Split(new char[] { ' ' });
-                for (int i = 0; i < split.Length; ++i)
-                {
-                    foreach (string newSplit in preposition)
+                    text = text.Trim();
+                    string[] preposition = new string[] { "A", "An", "At", "But", "By", "For", "In", "Nor", "On", "Or", "Out", "So", "The", "To", "Up", "Yet" };
+                    while (text.Contains("  "))
                     {
-                        if (split[i].Equals(newSplit))
+                        text = text.Replace("  ", " ");
+                    }
+                    string titleCase = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text);
+                    string[] split = titleCase.Split(new char[] { ' ' });
+                    for (int i = 0; i < split.Length; ++i)
+                    {
+                        foreach (string newSplit in preposition)
                         {
-                            split[i] = split[i].ToLower();
+                            if (split[i].Equals(newSplit))
+                            {
+                                split[i] = split[i].ToLower();
+                            }
                         }
                     }
-                }
                 titleCase = string.Join(" ", split);
                 StringBuilder builder = new StringBuilder();
 
@@ -69,7 +72,12 @@ namespace TitleCapitalizationTool
                 Console.WriteLine(builder);
                 Console.Write("\n");
             }
+                //else
+               // {
+                 //   Console.Write("\r");
+                //}
+        }
             while (true);
         }
     }
-} 
+}
