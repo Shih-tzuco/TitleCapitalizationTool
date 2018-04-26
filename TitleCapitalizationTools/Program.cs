@@ -72,10 +72,6 @@ namespace TitleCapitalizationTool
                 Console.WriteLine(builder);
                 Console.Write("\n");
             }
-                //else
-               // {
-                 //   Console.Write("\r");
-                //}
         }
             while (true);
         }
