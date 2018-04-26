@@ -66,11 +66,11 @@ namespace TitleCapitalizationTool
                 }
                 if (builder.Length != 0)
                 {
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("Output String: ");
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine(builder);
-                Console.Write("\n");
+                 Console.ForegroundColor = ConsoleColor.DarkGray;
+                 Console.Write("Output String: ");
+                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+                 Console.WriteLine(builder);
+                 Console.Write("\n");
                 }
         }
             while (true);
