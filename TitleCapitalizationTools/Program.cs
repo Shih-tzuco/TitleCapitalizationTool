@@ -25,11 +25,16 @@ namespace TitleCapitalizationTool
                 string[] split = titleCase.Split(new char[] { ' ' });
                 for (int i = 0; i < split.Length; ++i)
                 {
-                    foreach (string newSplit in preposition)
+                    if (i > 0)
                     {
-                        if (split[i].Equals(newSplit))
+                        if (i == 0)
                         {
-                            split[i] = split[i].ToLower();
+                            split[i] = split[i].Substring(0, 1).ToUpper() + split[i];
+
+                            if (i == split.Length - 1)
+                            {
+                                split[i] = split[i] + split[i].Substring(1, split[i].Length - 1).ToLower();
+                            }
                         }
                     }
                 }
