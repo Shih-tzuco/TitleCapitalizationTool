@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TitleCapitalizationTool
 {
-   public class MainClass
+    public class MainClass
     {
         public static void Main()
         {
@@ -17,6 +17,7 @@ namespace TitleCapitalizationTool
                 text = text.Trim();
                 text = CultureInfo.CurrentCulture.TextInfo.ToLower(text);
                 string[] preposition = new string[] { "A", "An", "At", "But", "By", "For", "In", "Nor", "On", "Or", "Out", "So", "The", "To", "Up", "Yet" };
+                //string[] preposition = new string[] { "a", "an", "at", "but", "by", "for", "in", "nor", "on", "or", "out", "so", "the", "to", "up", "et" };
                 while (text.Contains("  "))
                 {
                     text = text.Replace("  ", " ");
@@ -25,19 +26,14 @@ namespace TitleCapitalizationTool
                 string[] split = titleCase.Split(new char[] { ' ' });
                 for (int i = 0; i < split.Length; ++i)
                 {
-                    if (i > 0)
+                    foreach (string newSplit in preposition)
                     {
-                        if (i == 0)
+                        if (split[i].Equals(newSplit))
                         {
-                            split[i] = split[i].Substring(0, 1).ToUpper() + split[i];
-
-                            if (i == split.Length - 1)
-                            {
-                                split[i] = split[i] + split[i].Substring(1, split[i].Length - 1).ToLower();
-                            }
+                            split[i] = split[i].ToLower();
                         }
                     }
-                }
+                } 
                 titleCase = string.Join(" ", split);
                 StringBuilder builder = new StringBuilder();
 
