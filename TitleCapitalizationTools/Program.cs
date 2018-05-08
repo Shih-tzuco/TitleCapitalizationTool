@@ -16,8 +16,7 @@ namespace TitleCapitalizationTool
                 string text = Console.ReadLine();
                 text = text.Trim();
                 text = CultureInfo.CurrentCulture.TextInfo.ToLower(text);
-                string[] preposition = new string[] { "A", "An", "At", "But", "By", "For", "In", "Nor", "On", "Or", "Out", "So", "The", "To", "Up", "Yet" };
-                //string[] preposition = new string[] { "a", "an", "at", "but", "by", "for", "in", "nor", "on", "or", "out", "so", "the", "to", "up", "et" };
+                string[] prepositions = new string[] { "A", "An", "At", "But", "By", "For", "In", "Nor", "On", "Or", "Out", "So", "The", "To", "Up", "Yet" };
                 while (text.Contains("  "))
                 {
                     text = text.Replace("  ", " ");
@@ -26,7 +25,7 @@ namespace TitleCapitalizationTool
                 string[] split = titleCase.Split(new char[] { ' ' });
                 for (int i = 0; i < split.Length; ++i)
                 {
-                    foreach (string newSplit in preposition)
+                    foreach (string newSplit in prepositions)
                     {
                         if (split[i].Equals(newSplit))
                         {
