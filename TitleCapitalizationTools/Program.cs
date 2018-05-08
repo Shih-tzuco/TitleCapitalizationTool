@@ -22,18 +22,18 @@ namespace TitleCapitalizationTool
                     text = text.Replace("  ", " ");
                 }
                 string titleCase = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text);
-                string[] split = titleCase.Split(new char[] { ' ' });
-                for (int i = 0; i < split.Length; ++i)
+                string[] separator = titleCase.Split(new char[] { ' ' });
+                for (int i = 0; i < separator.Length; ++i)
                 {
-                    foreach (string newSplit in prepositions)
+                    foreach (string newSeparator in prepositions)
                     {
-                        if (split[i].Equals(newSplit))
+                        if (separator[i].Equals(newSeparator))
                         {
-                            split[i] = split[i].ToLower();
+                            separator[i] = separator[i].ToLower();
                         }
                     }
                 } 
-                titleCase = string.Join(" ", split);
+                titleCase = string.Join(" ", separator);
                 StringBuilder builder = new StringBuilder();
 
                 char[] punctuation = { ',', ':', ';', '?', '.', '!', '-' };
