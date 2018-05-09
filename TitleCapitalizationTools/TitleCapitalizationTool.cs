@@ -6,7 +6,7 @@ namespace TitleCapitalizationTool
 {
     public class MainClass
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
             do
             {
@@ -27,7 +27,7 @@ namespace TitleCapitalizationTool
                 {
                     foreach (string newSeparator in prepositions)
                     {
-                        if (separator[i].Equals(newSeparator))
+                        if (separator[i].Equals(newSeparator) && i != 0 && i != separator.Length - 1)
                         {
                             separator[i] = separator[i].ToLower();
                         }
