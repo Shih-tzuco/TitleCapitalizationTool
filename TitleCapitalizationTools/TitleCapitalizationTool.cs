@@ -10,9 +10,9 @@ namespace TitleCapitalizationTool
         {
             do
             {
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write("Please, Enter a String in English: ");
-                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.Gray;
+                Console.Write("Enter title to capitalize: ");
+                Console.ForegroundColor = ConsoleColor.Red;
                 string text = Console.ReadLine();
                 text = text.Trim();
                 text = CultureInfo.CurrentCulture.TextInfo.ToLower(text);
@@ -66,9 +66,9 @@ namespace TitleCapitalizationTool
                 }
                 if (builder.Length != 0)
                 {
-                 Console.ForegroundColor = ConsoleColor.DarkGray;
-                 Console.Write("Output String: ");
-                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+                 Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write("Capitalized title: ");
+                 Console.ForegroundColor = ConsoleColor.Green;
                  Console.WriteLine(builder);
                  Console.Write("\n");
                 }
