@@ -67,7 +67,7 @@ namespace TitleCapitalizationTool
                 if (builder.Length != 0)
                 {
                  Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.Write("Capitalized title: ");
+                 Console.Write("Capitalized title: ");
                  Console.ForegroundColor = ConsoleColor.Green;
                  Console.WriteLine(builder);
                  Console.Write("\n");
