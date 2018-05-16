@@ -88,7 +88,7 @@ namespace TitleCapitalizationTool
                     string newText = Console.ReadLine();
 					while (newText.Length == 0)
 					{
-						Console.SetCursorPosition(28, Console.CursorTop - 1);
+						Console.SetCursorPosition(28, Console.CursorTop);
 						newText = Console.ReadLine();
 					}
 					Console.ForegroundColor = ConsoleColor.Gray;
