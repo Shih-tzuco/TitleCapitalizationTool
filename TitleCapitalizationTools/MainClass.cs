@@ -66,7 +66,7 @@ namespace TitleCapitalizationTool
 				for (int i = 0; i < text.Length; ++i)
 				{
 					Console.ForegroundColor = ConsoleColor.Gray;
-					Console.Write("Enter title to capitalize: ");
+					Console.Write("Original title: ");
 					Console.ForegroundColor = ConsoleColor.Red;
 					Console.ForegroundColor = ConsoleColor.Gray;
 					Console.Write("Capitalized title: ");
@@ -80,7 +80,7 @@ namespace TitleCapitalizationTool
 				while (true)
 				{
 					Console.ForegroundColor = ConsoleColor.Gray;
-					Console.Write("Enter title to capitalize: ");
+					Console.Write("Original title: ");
 					Console.ForegroundColor = ConsoleColor.Red;
 					string newText = Console.ReadLine();
 					while (newText.Length == 0)
