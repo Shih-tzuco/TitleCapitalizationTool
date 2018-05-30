@@ -79,7 +79,6 @@ namespace TitleCapitalizationTool
 			{
 				while (true)
 				{
-					Console.ForegroundColor = ConsoleColor.Gray;
 					Console.Write("Enter title to capitalization: ");
 					Console.ForegroundColor = ConsoleColor.Red;
 					string newText = Console.ReadLine();
